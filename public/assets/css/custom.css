@@ -1,0 +1,143 @@
+
+.label-icon {
+    color: #ffffff;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.checkbox-input {
+    margin-right: 6px;
+}
+
+.borda-indicador-tickets {
+    padding: 25px;
+}
+
+.borda-indicador-tickets .counter {
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+
+.divSelectUsuarios {
+    display: none;
+}
+
+.divSelectDepartamentos {
+    display: none;
+}
+
+.divSelectTimes {
+    display: none;
+}
+
+.container-modals {
+    padding-left: 30px;
+    padding-right: 60px;
+    padding-top: 10px;
+}
+
+.iconeLixeiraTarefa:hover {
+    cursor: pointer;
+}
+
+.iconeLixeiraMembro:hover {
+    cursor: pointer;
+}
+
+.iconeLixeiraMidia:hover {
+    cursor: pointer;
+}
+
+.midias {
+    padding-top: 14px;
+}
+
+.tarefas {
+    padding-top: 14px;
+}
+
+.membros {
+    padding-top: 14px;
+}
+
+.membros-resultado-modal {
+    margin-left: 20px;
+    padding-top: 10px;
+    margin-top: 15px;
+} 
+
+.btn-padrao {
+    width: 250px;
+    
+}
+
+.card-title {
+    padding-left: 10px;
+}
+
+.pesquisa-multipla-escolha {
+    vertical-align: -12px;
+    margin-left: 22px;
+    height: 33px;
+}
+
+.contador-lista-suspensa {
+    vertical-align: -27px;
+    font-size: 16px;
+    color: lightgray;
+}
+
+.pesquisa-caixa-de-selecao {
+    vertical-align: -12px;
+    margin-left: 22px;
+    height: 33px;
+}
+
+.checkbox-pesquisa-caixa-de-selecao {
+    padding: 1px;
+    padding-right: 18px;
+    vertical-align: 3px;
+    color: lightgray;
+    border: 2px solid;    
+}
+
+.pesquisa-multipla-escolha {
+    vertical-align: -12px;
+    margin-left: 22px;
+    height: 33px;
+}
+
+.radio-pesquisa-multipla-escolha {
+    padding: 1px;
+    padding-right: 18px;
+    vertical-align: 3px;
+    color: lightgray;
+    border: 2px solid;  
+    border-radius: 100%;
+}
+
+.divMultiplaEscolha {
+    display: none;
+}
+
+.divCaixaDeSelecao {
+    display: none;
+}
+
+.divListaSuspensa {
+    display: none;
+}
+
+.titulo-perguntas {
+    color: #e7e7e7;
+}
+
+.icone-perguntas {
+    color: #bbb9c0;
+}
+
+.icone-perguntas:hover {
+    cursor: pointer
+}
