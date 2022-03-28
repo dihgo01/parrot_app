@@ -7,5 +7,6 @@
 <script src="{{ URL::asset('assets/libs/datatable/datatables.min.js') }}"></script>
 <script src="{{ URL::asset('assets/js/pages/lord-icon-2.1.0.js') }}"></script>
 <script src="{{ URL::asset('assets/js/plugins.min.js') }}"></script>
+<script src="{{ URL::asset('assets/js/preload.js') }}"></script>
 @yield('script')
 @yield('script-bottom')

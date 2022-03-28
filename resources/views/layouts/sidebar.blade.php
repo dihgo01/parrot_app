@@ -31,10 +31,10 @@
             <div id="two-column-menu">
             </div>
             <ul class="navbar-nav" id="navbar-nav">
-                <li class="menu-title"><span>@lang('translation.menu')</span></li>
+                <li class="menu-title"><span>Dashboard</span></li>
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="dashboard" role="button">
-                        <i class="ri-dashboard-2-line"></i> <span>@lang('translation.dashboards')</span>
+                        <i class="ri-dashboard-2-line"></i> <span>Dashboard</span>
                     </a>
                 </li> <!-- end Dashboard Menu -->
                 <li class="nav-item">

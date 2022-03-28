@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title') @lang('translation.basic-elements') @endsection
+@section('title') Categorias @endsection
 @section('content')
     @component('components.breadcrumb')
         @slot('li_1') Categorias @endslot

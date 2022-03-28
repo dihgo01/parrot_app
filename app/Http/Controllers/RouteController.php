@@ -2,13 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Usuarios;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Session;
-
 class RouteController extends Controller
 {
     /**
@@ -16,118 +9,44 @@ class RouteController extends Controller
      *
      * @return void
      */
-    
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index(Request $request)
+    public function tickets()
     {
-
-        $token = Session::get('token');
-
-        if (view()->exists($request->path())) {
-            if(isset($token)) {
-                return view($request->path());
-            }else{
-                return view('auth.login');
-            }
-        }
-        return abort(404);
-    }
-
-
-    public function root()
-    {
-        return view('auth.login');
-    }
-
-    /*Language Translation*/
-    public function lang($locale)
-    {
-        if ($locale) {
-            App::setLocale($locale);
-            Session::put('lang', $locale);
-            Session::save();
-            return redirect()->back()->with('locale', $locale);
+        return view('tickets');
+        /*
+        if (view()->exists('tickets.'.$request->path())) {
+            return view('tickets.'.$request->path());
         } else {
-            return redirect()->back();
+            return redirect()->route('dashboard');
         }
+        */ 
+    }
+    public function ticketsCadastro()
+    {
+        return view('tickets-cadastro');
     }
 
-    public function updateProfile(Request $request, $id)
+    public function categorias()
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email'],
-            'avatar' => ['nullable', 'image', 'mimes:jpg,jpeg,png', 'max:1024'],
-        ]);
-
-        $user = Usuarios::find($id);
-        $user->name = $request->get('name');
-        $user->email = $request->get('email');
-
-        if ($request->file('avatar')) {
-            $avatar = $request->file('avatar');
-            $avatarName = time() . '.' . $avatar->getClientOriginalExtension();
-            $avatarPath = public_path('/images/');
-            $avatar->move($avatarPath, $avatarName);
-            $user->avatar =  $avatarName;
-        }
-
-        $user->update();
-        if ($user) {
-            Session::flash('message', 'User Details Updated successfully!');
-            Session::flash('alert-class', 'alert-success');
-            // return response()->json([
-            //     'isSuccess' => true,
-            //     'Message' => "User Details Updated successfully!"
-            // ], 200); // Status code here
-            return redirect()->back();
-        } else {
-            Session::flash('message', 'Something went wrong!');
-            Session::flash('alert-class', 'alert-danger');
-            // return response()->json([
-            //     'isSuccess' => true,
-            //     'Message' => "Something went wrong!"
-            // ], 200); // Status code here
-            return redirect()->back();
-
-        }
+        return view('categorias');
     }
 
-    public function updatePassword(Request $request, $id)
+    public function categoriasCadastro()
     {
-        $request->validate([
-            'current_password' => ['required', 'string'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
-        ]);
+        return view('categorias-cadastro');
+    }
 
-        if (!(Hash::check($request->get('current_password'), Auth::user()->password))) {
-            return response()->json([
-                'isSuccess' => false,
-                'Message' => "Your Current password does not matches with the password you provided. Please try again."
-            ], 200); // Status code
-        } else {
-            $user = Usuarios::find($id);
-            $user->password = Hash::make($request->get('password'));
-            $user->update();
-            if ($user) {
-                Session::flash('message', 'Password updated successfully!');
-                Session::flash('alert-class', 'alert-success');
-                return response()->json([
-                    'isSuccess' => true,
-                    'Message' => "Password updated successfully!"
-                ], 200); // Status code here
-            } else {
-                Session::flash('message', 'Something went wrong!');
-                Session::flash('alert-class', 'alert-danger');
-                return response()->json([
-                    'isSuccess' => true,
-                    'Message' => "Something went wrong!"
-                ], 200); // Status code here
-            }
-        }
+    public function prioridades()
+    {
+        return view('prioridades');
+    }
+
+    public function prioridadesCadastro()
+    {
+        return view('prioridades-cadastro');
+    } 
+
+    public function pesquisaSatisfacao()
+    {
+        return view('pesquisa-satisfacao');
     }
 }

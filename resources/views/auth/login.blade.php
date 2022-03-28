@@ -1,6 +1,5 @@
 @extends('layouts.master-without-nav')
 @section('title')
-@lang('translation.signin')
 @endsection
 @section('content')
 
@@ -9,12 +8,12 @@
     <div class="bg-overlay"></div>
     <!-- auth-page content -->
 
-    <div class="bg-loader" style="display: none;" id="preloader">
-        <lord-icon src="https://cdn.lordicon.com/ymrqtsej.json" trigger="loop" colors="primary:#ffffff" style="width:300px;height:300px;position:relative;left:50%;top:50%;margin-left:-125px;margin-top:-125px">
+    <div class="bg-loader"  id="preloader">
+        <lord-icon src="https://cdn.lordicon.com/ymrqtsej.json" trigger="loop" colors="primary:#000000" style="width:300px;height:300px;position:relative;left:50%;top:50%;margin-left:-125px;margin-top:-125px; background-color:transparent;">
         </lord-icon>
     </div>
-    
-    <div class="auth-page-content card-principal overflow-hidden pt-lg-5" >
+
+    <div class="auth-page-content card-principal overflow-hidden pt-lg-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -70,8 +69,8 @@
                                     </div>
 
                                     <div class="mt-4">
-                                        <form action="index" >
-                                            
+                                        <form action="{{ route('login_auth') }}" method="POST">
+                                            @csrf
                                             <div class="mb-3">
                                                 <label for="username" class="form-label">E-mail</label>
                                                 <input type="text" class="form-control" name="email" id="username" placeholder="Digite o e-mail">
@@ -83,7 +82,7 @@
                                                 </div>
                                                 <label class="form-label" for="password-input">Senha</label>
                                                 <div class="position-relative auth-pass-inputgroup mb-3">
-                                                    <input type="password" class="form-control pe-5" name="password"  placeholder="Digite a senha" id="password-input">
+                                                    <input type="password" class="form-control pe-5" name="password" placeholder="Digite a senha" id="password-input">
                                                     <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
                                                 </div>
                                             </div>
@@ -101,7 +100,7 @@
                                     </div>
 
                                     <div class="mt-5 text-center">
-                                        <p class="mb-0">Não tem uma conta?<a href="auth-signup-cover" class="fw-semibold text-primary text-decoration-underline"> Inscrever-se</a>
+                                        <p class="mb-0">Não tem uma conta?<a href="auth-cadastro" class="fw-semibold text-primary text-decoration-underline"> Inscrever-se</a>
                                         </p>
                                     </div>
                                 </div>
@@ -144,3 +143,6 @@
 <script src="{{ URL::asset('assets/js/pages/password-addon.init.js') }}"></script>
 <script src="{{ URL::asset('assets/js/preload.js') }}"></script>
 @endsection
+<script>
+
+</script>

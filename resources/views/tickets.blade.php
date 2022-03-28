@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title') @lang('translation.basic-elements') @endsection
+@section('title') Tickets @endsection
 @section('css') 
 <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />

@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title') @lang('translation.basic-elements') @endsection
+@section('title') Pesquisa de Satisfação @endsection
 @section('content')
     @component('components.breadcrumb')
         @slot('li_1') Pesquisa de Satisfação @endslot

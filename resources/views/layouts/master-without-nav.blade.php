@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-topbar="light">
+<html lang="pt-BR" data-topbar="light">
 
     <head>
     <meta charset="utf-8" />

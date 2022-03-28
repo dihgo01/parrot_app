@@ -3,69 +3,61 @@
 namespace App\Http\Controllers;
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-     /**
+    /**
      * Create a new AuthController instance.
      *
      * @return void
      */
 
-    public function showLogin(){
+    public function showLogin()
+    {
         return view('auth.login');
     }
 
-    public function showDashboard(){
-        return view('dashboard');
+    public function showRegister()
+    {
+        return view('auth.register');
     }
 
-    public function root(){
-        if(Auth::check() === true) {
+    public function showDashboard()
+    {
+        return view('index');
+    }
+
+    public function root()
+    {
+        if (Auth::check() === true) {
             return redirect()->route('dashboard');
-        }else{
+        } else {
             return redirect()->route('login');
         }
     }
 
-    public function index(Request $request)
+    public function login(Request $credentials)
     {
-        if (view()->exists($request->path())) {
-            return view($request->path());
-        }else {
-           return redirect()->route('login');
-        }
-        return abort(404);
-    }
-    /**
-     * Get a JWT via given credentials.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function login(Request $credentials){
 
         $credentials = request(['email', 'password']);
 
-        if (!$token = Auth::attempt($credentials)) {
-            return response()->json(['error' => 'E-mail ou senha inválidos'], 404);
+        $token = Auth::attempt($credentials);
+
+        if (!$token) {
+
+
         }
 
-        return redirect()->route('dashboard');
+        return redirect(route('dashboard'))->with('success')->with('loader',true);
 
     }
 
-     /**
-     * Log the user out (Invalidate the token).
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
     public function logout()
     {
         Auth::logout();
         return redirect()->route('login');
     }
-
 }

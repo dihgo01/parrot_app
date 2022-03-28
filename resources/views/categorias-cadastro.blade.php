@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title') Tickets Cadastro @endsection
+@section('title') Categorias @endsection
 @section('css') 
 <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
@@ -7,7 +7,7 @@
 @section('content')
 
     @component('components.breadcrumb')
-        @slot('li_1') Tickets @endslot
+        @slot('li_1') Categorias @endslot
         @slot('title') Tickets @endslot
     @endcomponent
 
@@ -247,5 +247,5 @@
 @section('script')
     <script src="{{ URL::asset('/assets/libs/prismjs/prismjs.min.js') }}"></script>
     <script src="{{ URL::asset('/assets/js/app.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/js/tickets.js') }}"></script>
+    <script src="{{ URL::asset('/assets/js/categorias.js') }}"></script>
 @endsection

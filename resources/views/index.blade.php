@@ -1,12 +1,12 @@
 @extends('layouts.master')
-@section('title') @lang('translation.dashboards') @endsection
+@section('title') Dashboard @endsection
 @section('css')
 <link href="assets/libs/jsvectormap/jsvectormap.min.css" rel="stylesheet" type="text/css" />
 <link href="assets/libs/swiper/swiper.min.css" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
 @component('components.breadcrumb')
-@slot('li_1') Dashboards @endslot
+@slot('li_1') Dashboard @endslot
 @slot('title') Dashboard @endslot 
 @endcomponent
 <div class="row">
